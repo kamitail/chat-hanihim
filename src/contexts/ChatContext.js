@@ -8,7 +8,7 @@ const ChatContext = React.createContext();
 export const useChat = () => useContext(ChatContext);
 
 export const ChatProvider = ({ children }) => {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const [chats, setChats] = useState([]);
     const [chat, setChat] = useState();

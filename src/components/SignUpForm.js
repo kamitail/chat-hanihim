@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 
 export default function SignUpForm() {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const { loginUser } = useUser();
     const [imageUrl, setImageUrl] = useState('');

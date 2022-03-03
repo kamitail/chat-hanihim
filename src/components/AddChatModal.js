@@ -7,7 +7,7 @@ import { useChat } from '../contexts/ChatContext';
 import axios from 'axios';
 
 export default function AddChatModal({ show, setShow }) {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const { user, users } = useUser();
     const [contacts, setContacts] = useState();

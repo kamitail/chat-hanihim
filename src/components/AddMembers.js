@@ -6,7 +6,7 @@ import { useUser } from '../contexts/UserContext';
 import axios from 'axios';
 
 export default function AddMembers({ show, setShow }) {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const [members, setMembers] = useState([]);
     const [contacts, setContacts] = useState();

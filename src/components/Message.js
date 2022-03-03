@@ -8,7 +8,7 @@ import { TiArrowBack } from 'react-icons/ti';
 import axios from 'axios';
 
 export default function Message({ message, setRef, lastMessage }) {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const { user } = useUser();
     const { chat, deleteMessage: deleteSelectedMessage, setOriginalMessage } = useChat();

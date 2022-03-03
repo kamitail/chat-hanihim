@@ -8,7 +8,7 @@ import UserDetails from './UserDetails';
 import axios from 'axios';
 
 export default function ChatHeader() {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const { chat, showGroupDetails, setShowGroupDetails } = useChat();
     const [memberDetails, setMemberDetails] = useState();

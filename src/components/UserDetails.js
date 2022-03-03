@@ -9,7 +9,7 @@ import { useChat } from '../contexts/ChatContext';
 import Swal from 'sweetalert2';
 
 export default function UserDetails({ show, setShow, currUser }) {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const { user, setUserDetails } = useUser();
     const [currUserChats, setCurrUserChats] = useState([]);

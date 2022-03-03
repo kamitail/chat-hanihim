@@ -7,7 +7,7 @@ import { useUser } from '../contexts/UserContext';
 import { useChat } from '../contexts/ChatContext';
 
 export default function ChatInput() {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const messageRef = useRef();
     const { user } = useUser();

@@ -7,7 +7,7 @@ const UserContext = React.createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
-    axios.defaults.baseURL = process.env.APP_URL || 'http://192.168.14.63:9000';
+    axios.defaults.baseURL = "https://chat-hgit anihim-server.herokuapp.com";
 
     const [user, setUser] = useState(localStorage.getItem('ut'));
     const [users, setUsers] = useState([]);
