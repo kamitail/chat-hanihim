@@ -1,0 +1,13 @@
+.no-chat {
+    background-color: blanchedalmond;
+    height: 97vh;
+    width: 70vw;
+    font-size: 2rem;
+}
+
+.locked-chat-input {
+    background-color: white;
+    font-weight: bold;
+    width: 72vw;
+    height: 3vh;
+}

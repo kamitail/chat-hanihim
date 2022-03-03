@@ -1,0 +1,12 @@
+.chat-header {
+    height: 12vh;
+    width: 72vw;
+    background-color: yellowgreen;
+    margin-bottom: 2vh;
+}
+
+.chat-header-logo {
+    height: 11vh;
+    width: 5.6vw;
+    margin-left: 1vw;
+}

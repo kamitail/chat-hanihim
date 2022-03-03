@@ -1,0 +1,23 @@
+.sidebar {
+    width: 39vw;
+    height: 98vh;
+    background-color: #000814;
+    overflow: hidden;
+}
+
+.sidebar-chats {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 70vh;
+    margin-left: 0.5vw;
+}
+
+.sidebar-chats::-webkit-scrollbar {
+    width: 1vw;
+}
+.sidebar-chats::-webkit-scrollbar-thumb {
+    background-color: springgreen; 
+    border-right: 4px solid #000814; 
+    border-top: 4px solid #000814; 
+    border-bottom: 2px solid #000814; 
+}

@@ -1,0 +1,22 @@
+.chat {
+    height: 14vh;
+    width: 99%;
+    border-bottom: 0.1rem solid #000814;
+}
+
+.chat-logo {
+    height: 10vh;
+    width: 10vh;
+}
+
+.new-messages {
+    height: 5vh;
+    width: 5vh;
+    margin-right: 1vw;
+    background-color: springgreen;
+    color: #000814;
+}
+
+.last-message-time {
+    font-size: 0.8rem;
+}

@@ -1,0 +1,107 @@
+.profile {
+    width: 95%;
+    height: 27vh;
+    background-color: springgreen;
+    margin: 0 3vw 1vh 0.5vw;
+    color: #003566;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.profile-icon {
+    width: 5vw;
+    color: #003566;
+    height: 5vh;
+}
+
+.profile-logo {
+    width: 5vw;
+    height: 10vh;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.chat-modal-content {
+    background-color: #000814;
+    color: yellowgreen;
+}
+
+.chat-add-image {
+    height: 30vh;
+    width: 16vw;
+    margin-top: 1.5vh;
+}
+
+.chat-modal-body {
+    background-color: #000814;
+    color: yellowgreen;
+    overflow: auto;
+    max-height: 69vh;
+}
+
+.chat-modal-body::-webkit-scrollbar {
+    width: 1.5vw;    
+}
+.chat-modal-body::-webkit-scrollbar-thumb {
+    background-color: yellowgreen;    
+    border-left: 5px solid #000814;  
+}
+
+.chat-modal-button {
+    background-color: yellowgreen;
+    color: #000814;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1.1rem 0.4rem 1.1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.chat-modal-button:disabled {
+    background-color: rgb(86, 114, 31);
+}
+
+.chat-modal-badge {
+    height: 5vh;
+}
+
+.badge-cancel {
+    color: white;
+}
+
+.contacts-list {
+    max-height: 40vh;
+}
+
+.contacts-list::-webkit-scrollbar {
+    width: 1.5vw;    
+}
+.contacts-list::-webkit-scrollbar-thumb {
+    background-color: yellowgreen;    
+    border-left: 5px solid #000814;  
+}
+
+.contact-item-even:hover {
+    background-color: rgb(202, 202, 202);
+}
+
+.contact-item-odd:hover {
+    background-color: rgb(246, 246, 246);
+}
+
+.chat-modal-header {
+    background-color: yellowgreen;
+    color: #000814;
+}
+
+.profile-details:hover {
+    background-color: rgba(153, 205, 50, 0.507);
+    border-radius: 0 0 1rem 1rem;
+    cursor: pointer;
+}
+
+.user-badge-image {
+    height: 4vh;
+    width: 2vw;
+}

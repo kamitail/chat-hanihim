@@ -1,0 +1,113 @@
+.message {
+    min-width: 10vw;
+    max-width: 40vw;
+    height: auto;
+    margin-bottom: 1vh;
+}
+
+.from-me {
+    background-color: rgb(0, 255, 128);
+    border-radius: 1rem 0 1rem 1rem;
+}
+
+.from-others {
+    background-color: white;
+    border-radius: 0 1rem 1rem 1rem;
+}
+
+.message-checked {
+    color: blue;
+    width: 2vw;
+    height: 3vh;
+}
+
+.message-recieved {
+    color: gray;
+    width: 2vw;
+    height: 3vh;
+}
+
+.delete-message-icon {
+    width: 1.5vw;
+    height: 3vh;
+    cursor: pointer;
+}
+
+.delete-message-icon:hover {
+    color: red;
+}
+
+.return-message-icon {
+    width: 3vw;
+    height: 3.7vh;
+    cursor: pointer;
+}
+
+.return-message-icon:hover {
+    color: orange;
+}
+
+.message-with-origin {
+    padding: 1vw;
+    background-color: rgba(128, 128, 128, 0.377);
+    max-height: 19vh;
+    overflow: auto;
+}
+
+.message-with-origin::-webkit-scrollbar {
+    width: 1vw;               /* width of the entire scrollbar */
+}
+
+.message-with-origin::-webkit-scrollbar-thumb {
+    background-color: springgreen;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgba(128, 128, 128, 0.377);  /* creates padding around scroll thumb */
+}
+
+.users-seen {
+    position: relative;
+    display: inline-block;
+  }
+
+.users-seen-logo {
+    width: 2vw;
+    height: 3vh;
+    margin-left: 1vh;
+}
+
+.users-seen:hover {
+    color: blue;
+}
+  
+  .users-seen .tooltiptext {
+    visibility: hidden;
+    width: 13vw;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 0%;
+    margin-left: -10vw;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .users-seen .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 84%;
+    margin-left: -5px;
+    border-width: 0.7rem;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
+  
+  .users-seen:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }

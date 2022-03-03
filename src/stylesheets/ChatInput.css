@@ -1,0 +1,28 @@
+.chat-input {
+    background-color: #000814;
+    height: 9vh;
+    width: 73vw;
+}
+
+.chat-form {
+    width: 72vw;
+}
+
+.original-message {
+    position: fixed;
+    bottom: 8vh;
+    left: 27vw;
+    width: auto;
+    max-width: 67.5vw;
+    opacity: 0.9;
+    max-height: 20vh;
+    padding: 1vw;
+    overflow: hidden;
+    background-color: grey;
+}
+
+.cancel-original-message {
+    width: 2vw;
+    height: 3vh;
+    cursor: pointer;
+}
