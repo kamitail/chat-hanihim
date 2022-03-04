@@ -37,7 +37,7 @@ export default function ChatHeader() {
 
     useEffect(() => {
         (!chat.is_group && user)
-            && axios.get(`/users/id/${chat.members
+            && axios.get(`https://chat-hanihim-server.herokuapp.com/users/id/${chat.members
                 .find((anyMember) => anyMember._id !== user)._id}`)
                 .then(({ data }) => {
                     setMemberDetails(data);

@@ -97,7 +97,7 @@ export default function AddChatModal({ show, setShow }) {
                     chooseChat(sameChat);
                 } else {
                     const newSocketChat = await
-                        (await axios.post('/chats/add', newChat)).data;
+                        (await axios.post('https://chat-hanihim-server.herokuapp.com/chats/add', newChat)).data;
                     refreshChats(newSocketChat);
                 }
 

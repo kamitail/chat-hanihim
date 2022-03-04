@@ -7,7 +7,7 @@ const UserContext = React.createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
-    axios.defaults.baseURL = "https://chat-hgit anihim-server.herokuapp.com";
+    axios.defaults.baseURL = "https://chat-hanihim-server.herokuapp.com";
 
     const [user, setUser] = useState(localStorage.getItem('ut'));
     const [users, setUsers] = useState([]);
@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get(`/users`)
+        axios.get(`https://chat-hanihim-server.herokuapp.com/users`)
             .then(({ data }) => {
                 setUsers(data);
             })
@@ -41,7 +41,7 @@ export const UserProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        user && axios.get(`/users/id/${user}`)
+        user && axios.get(`https://chat-hanihim-server.herokuapp.com/users/id/${user}`)
             .then(({ data }) => {
                 setUserDetails(data);
             })

@@ -21,7 +21,7 @@ export const ChatProvider = ({ children }) => {
     const [originalMessage, setOriginalMessage] = useState();
 
     useEffect(() => {
-        user && axios.put('/users/online', {
+        user && axios.put('https://chat-hanihim-server.herokuapp.com/users/online', {
             id: user,
             isOnline: true,
             lastSeen: new Date()
@@ -32,7 +32,7 @@ export const ChatProvider = ({ children }) => {
     }, [user, socket, users]);
 
     window.onbeforeunload = (e) => {
-        axios.put('/users/online', {
+        axios.put('https://chat-hanihim-server.herokuapp.com/users/online', {
             id: user,
             isOnline: false,
             lastSeen: new Date()
@@ -44,7 +44,7 @@ export const ChatProvider = ({ children }) => {
 
     const makeUserOffline = async (userId) => {
         socket && socket.emit('user-offline', users);
-        await axios.put('/users/online', {
+        await axios.put('https://chat-hanihim-server.herokuapp.com/users/online', {
             id: userId,
             isOnline: false,
             lastSeen: new Date()
@@ -60,7 +60,7 @@ export const ChatProvider = ({ children }) => {
     }, [user]);
 
     useEffect(() => {
-        user && axios.get(`/users/chats/newMessages/${user}`)
+        user && axios.get(`https://chat-hanihim-server.herokuapp.com/users/chats/newMessages/${user}`)
             .then(({ data }) => {
                 setNewMessages(data);
             })
@@ -68,7 +68,7 @@ export const ChatProvider = ({ children }) => {
     }, [user, chat, chats]);
 
     useEffect(() => {
-        user && axios.get(`/users/chats/${user}`)
+        user && axios.get(`https://chat-hanihim-server.herokuapp.com/users/chats/${user}`)
             .then(({ data }) => {
                 setChats(data.chats);
             })
@@ -87,7 +87,7 @@ export const ChatProvider = ({ children }) => {
     const addMessage = useCallback(async (newChat) => {
         if (chat && newChat._id === chat._id) {
             const checkedChat = await (await
-                axios.patch(`/messages/update/${newChat._id}/${user}`))
+                axios.patch(`https://chat-hanihim-server.herokuapp.com/messages/update/${newChat._id}/${user}`))
                 .data;
             socket.emit('check-message', checkedChat);
             setChats([newChat, ...chats.filter((anyChat) => anyChat._id !== newChat._id)]);
@@ -141,7 +141,7 @@ export const ChatProvider = ({ children }) => {
 
     const chooseChat = useCallback(async (checkedChat) => {
         const newChat = await (await
-            axios.patch(`/messages/update/${checkedChat._id}/${user}`))
+            axios.patch(`https://chat-hanihim-server.herokuapp.com/messages/update/${checkedChat._id}/${user}`))
             .data;
         socket.emit('check-message', newChat);
         setChat(newChat);
@@ -345,8 +345,8 @@ export const ChatProvider = ({ children }) => {
     }, [socket, chats, chat, setUsers]);
 
     const editUser = async (editedChats) => {
-        const updatedUsers = await (await axios.get('/users')).data;
-        const updatedUserDetails = await (await axios.get(`/users/id/${user}`)).data;
+        const updatedUsers = await (await axios.get('https://chat-hanihim-server.herokuapp.com/users')).data;
+        const updatedUserDetails = await (await axios.get(`https://chat-hanihim-server.herokuapp.com/users/id/${user}`)).data;
 
         socket.emit('edit-user', { chats: editedChats, users: updatedUsers });
 
@@ -388,7 +388,7 @@ export const ChatProvider = ({ children }) => {
         }
 
         socket.on('user-disconnected', () => {
-            user && axios.get(`/users/chats/${user}`)
+            user && axios.get(`https://chat-hanihim-server.herokuapp.com/users/chats/${user}`)
                 .then(({ data }) => {
                     setChats(data.chats);
                     const currChat = data.chats.find((anyChat) => anyChat._id === chat._id);

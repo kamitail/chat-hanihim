@@ -43,7 +43,7 @@ export default function AddMembers({ show, setShow }) {
     const addNewMembers = async () => {
         try {
             const newMembersChat = await (await
-                axios.put(`/chats/users/add/${chat._id}`,
+                axios.put(`https://chat-hanihim-server.herokuapp.com/chats/users/add/${chat._id}`,
                     { members })).data;
             add(newMembersChat);
             setShow(false);

@@ -44,7 +44,7 @@ export default function SignUpForm() {
             isEmailTaken =
                 await (await
                     axios.get(
-                        `/users/email/${emailRef.current.value}`)).data;
+                        `https://chat-hanihim-server.herokuapp.com/users/email/${emailRef.current.value}`)).data;
         } catch (error) {
             console.log('There is a problem in connecting to the server');
         }
@@ -77,7 +77,7 @@ export default function SignUpForm() {
                 }
 
                 const newUser =
-                    await (await axios.post('/users/add', newUserDetails)).data;
+                    await (await axios.post('https://chat-hanihim-server.herokuapp.com/users/add', newUserDetails)).data;
                 loginUser(newUser._id);
             } catch (error) {
                 console.log(error.message);

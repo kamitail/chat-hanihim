@@ -24,7 +24,7 @@ export default function Message({ message, setRef, lastMessage }) {
     const deleteMessage = async (deletedMessage) => {
         try {
             const chatWithoutMessages = await (await
-                axios.delete(`/messages/delete/${deletedMessage._id}`))
+                axios.delete(`https://chat-hanihim-server.herokuapp.com/messages/delete/${deletedMessage._id}`))
                 .data;
             deleteSelectedMessage(chatWithoutMessages);
         } catch (error) {

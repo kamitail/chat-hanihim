@@ -39,7 +39,7 @@ export default function ChatInput() {
 
                 const newChat =
                     await (await
-                        axios.post('/messages/add', sendedMessage)).data;
+                        axios.post('https://chat-hanihim-server.herokuapp.com/messages/add', sendedMessage)).data;
                 messageRef.current.value = '';
                 sendSocketMessage(newChat);
                 addMessage(newChat);

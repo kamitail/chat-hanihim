@@ -43,7 +43,7 @@ export default function UserDetails({ show, setShow, currUser }) {
     }
 
     useEffect(() => {
-        axios.get(`/users/chats/${currUser._id}`)
+        axios.get(`https://chat-hanihim-server.herokuapp.com/users/chats/${currUser._id}`)
             .then(({ data }) => {
                 setCurrUserChats(data.chats);
             })
@@ -58,7 +58,7 @@ export default function UserDetails({ show, setShow, currUser }) {
                 || (imageUrl && imageUrl !== currUser.image)
                 || (status && status !== currUser.status)) {
                 const editedUserChats =
-                    await (await axios.put('/users/edit',
+                    await (await axios.put('https://chat-hanihim-server.herokuapp.com/users/edit',
                         {
                             'id': user,
                             'phone_number': phoneNumber,
@@ -95,12 +95,11 @@ export default function UserDetails({ show, setShow, currUser }) {
             } else if (newPasswordRef.current.value !== repeatPasswordRef.current.value) {
                 errorRef(repeatPasswordRef, `The passwords aren't matching`);
             } else {
-                const updatedUser =
-                    await (await axios.put('/users/edit/password',
-                        {
-                            'id': user,
-                            'password': newPasswordRef.current.value
-                        })).data;
+                const updatedUser = await axios.put('https://chat-hanihim-server.herokuapp.com/users/edit/password',
+                    {
+                        'id': user,
+                        'password': newPasswordRef.current.value
+                    }).data;
                 setUserDetails(updatedUser);
                 Swal.fire({
                     icon: 'success',
